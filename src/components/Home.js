@@ -6,14 +6,13 @@ import EmployeeCard from './EmployeeCard';
 import './Home.css'
 
 
-function Home({search, setSearch}) {
+function Home({search, setSearch, sort, setSort}) {
 
     const [employeeData, setEmployeeData] = useState([])
     const [loading, setLoading] = useState(true)
 
     function getEmployeeData() {
         setTimeout(() => {
-
             if(search){
                 setEmployeeData(data.filter(item=>{
                     console.log(item.profession);
@@ -30,13 +29,18 @@ function Home({search, setSearch}) {
 
     useEffect(() => {
         getEmployeeData()
+        // console.log(sort);
     }, [search])
+
+    useEffect(()=>{
+        // setEmployeeData(employeeData.profession.sort())
+    },[sort])
 
     // console.log(data);
 
     return (
         <div className='home-container'>
-            <h2>Employee Data</h2>
+            <h2>Amura Health Employee Data</h2>
             <div className='home-data-container'>
                 {loading ? <h4>Loading Employee Data...</h4> : <>
                     {employeeData && employeeData.map(item => (
