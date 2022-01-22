@@ -1,7 +1,9 @@
 import React from 'react'
 import './Header.css'
 
-function Header({search, setSearch}) {
+function Header({search, setSearch, sort, setSort}) {
+
+
 
     const handleSearch=(e)=>{
         setSearch(e.target.value)
@@ -13,9 +15,9 @@ function Header({search, setSearch}) {
             <input type='text' placeholder='Search..' className='header-input' value={search} onChange={(e)=>handleSearch(e)} />
             <button>Search</button>
             <ul >
-                <li className='header-list'>Ascending</li>
-                <li className='header-list'>Descending</li>
-                <li className='header-list'>Cancel</li>
+                <li className='header-list' onClick={()=>setSort("ascending")}>Ascending</li>
+                <li className='header-list' onClick={()=>setSort("descending")} >Descending</li>
+                <li className='header-list' onClick={()=>setSort("")}>Cancel</li>
             </ul>
         </div>
     )

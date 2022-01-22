@@ -12,7 +12,7 @@ function Home({search, setSearch}) {
     const [loading, setLoading] = useState(true)
 
     function getEmployeeData() {
-        setTimeout(() => {            
+        setTimeout(() => {
 
             if(search){
                 setEmployeeData(data.filter(item=>{

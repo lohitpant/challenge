@@ -9,15 +9,16 @@ import Home from './components/Home'
 export default function App() {
 
     const[search, setSearch]=useState('')
+    const[sort, setSort]=useState('')
 
 
     return (
         <div className='app-container'>
             <Router>
-                <Header search={search} setSearch={setSearch} />
+                <Header search={search} setSearch={setSearch} sort={sort} setSort={setSort} />
                 <Switch>
                     <Route path='/' exact>
-                        <Home search={search} setSearch={setSearch} />
+                        <Home search={search} setSearch={setSearch} sort={sort} setSort={setSort} />
                     </Route>
                     <Route path='/detail' >
                         <EmployeeDetail />
