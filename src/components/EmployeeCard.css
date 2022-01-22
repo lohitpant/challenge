@@ -1,0 +1,28 @@
+.employee-card-container{
+    border: 2px solid black;
+    border-radius: 10px ;
+    margin: 10px;
+    padding: 10px;    
+}
+
+.employee-link {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.employee-card-container:hover {
+    background: rgb(234, 243, 195);
+    
+}
+
+.emp-lastName{
+    font-size: 12px;
+    
+}
+
+.employee-card-second{
+    display: flex;
+    justify-content: space-around;
+}
+
